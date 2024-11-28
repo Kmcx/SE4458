@@ -71,10 +71,10 @@ email: admin
 password: hoca
 
 
-Installation
+
 Clone the repository:
-git clone <repository_url>
-cd <project_directory>
+git clone [<repository_url>](https://github.com/Kmcx/SE4458.git)
+
 
 Install dependencies:
 npm install
