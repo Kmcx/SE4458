@@ -29,6 +29,14 @@ const roleAuthorization = require('../middleware/role');
  *                 type: string
  *               price:
  *                 type: number
+ *               from_date:
+ *                 type: string
+ *                 format: date
+ *                 description: Start date of availability
+ *               to_date:
+ *                  type: string
+ *                  format: date
+ *                  description: End date of availability
  *     responses:
  *       201:
  *         description: Listing created successfully
@@ -37,26 +45,42 @@ const roleAuthorization = require('../middleware/role');
  *       500:
  *         description: Server error
  */
-router.post('/', auth,roleAuthorization(['host']), async (req, res) => {
-  try {
-    const { title, no_of_people, country, city, price } = req.body;
+router.post('/', auth, roleAuthorization(['host']), async (req, res) => {
+  const { title, no_of_people, country, city, price, from_date, to_date } = req.body;
 
-    const newListing = new Listing({
+  try {
+    // Validate required fields
+    if (!title || !no_of_people || !country || !city || !price || !from_date || !to_date) {
+      return res.status(400).json({ msg: 'All fields, including from_date and to_date, are required' });
+    }
+
+    // Validate date range
+    const startDate = new Date(from_date);
+    const endDate = new Date(to_date);
+    if (startDate >= endDate) {
+      return res.status(400).json({ msg: 'from_date must be earlier than to_date' });
+    }
+
+    // Create the listing
+    const listing = new Listing({
       hostId: req.user.id,
       title,
       no_of_people,
       country,
       city,
       price,
+      from_date: startDate,
+      to_date: endDate,
     });
 
-    const listing = await newListing.save();
+    await listing.save();
     res.status(201).json({ status: 'successful', listing });
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server error');
   }
 });
+
 
 /**
  * @swagger

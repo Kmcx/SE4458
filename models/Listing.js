@@ -8,7 +8,9 @@ const ListingSchema = new mongoose.Schema({
   city: { type: String, required: true },
   price: { type: Number, required: true },
   ratings: { type: Number, default: 0 },
-  available_dates: [{ type: Date }],
+  from_date: { type: Date, required: true }, 
+  to_date: { type: Date, required: true },   
+  created_at: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Listing', ListingSchema);
