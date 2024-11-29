@@ -18,7 +18,7 @@ connectDB();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Welcome!');
+    res.send('Welcome!, add a /api-docs endpoint for Swagger UI');
   });
 
 app.use('/api-docs', swaggerUi.serve,swaggerUi.setup(swaggerDocs));
