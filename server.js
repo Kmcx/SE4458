@@ -10,6 +10,10 @@ connectDB();
 // Middleware
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('Welcome!');
+  });
+
 app.use('/api-docs', swaggerUi.serve,swaggerUi.setup(swaggerDocs));
 
 
