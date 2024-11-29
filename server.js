@@ -4,6 +4,13 @@ const {swaggerUi, swaggerDocs}= require('./config/swagger');
 const app = express();
 require('dotenv').config();
 
+const cors = require("cors");
+
+app.use(cors({
+    origin: "https://se4458.onrender.com",          // Sadece belirli domainlere izin ver
+    methods: ["GET", "POST", "PUT", "DELETE"],  // Hangi HTTP metodlarına izin verileceğini belirt
+    allowedHeaders: ["Content-Type", "Authorization"],  // Hangi başlıklar kabul edilecek
+  }));
 
 connectDB();
 
