@@ -1,5 +1,7 @@
 4458 Midterm API project for a short-term stay company 
 
+Presentation video link : https://youtu.be/vtan-WZrkOQ
+
 Features
 Guests:
 -Search for available listings by location, dates, and number of people.
@@ -74,6 +76,8 @@ password: hoca
 
 Clone the repository:
 git clone [<repository_url>](https://github.com/Kmcx/SE4458.git)
+Azure: https://midtermapiproject-fvaacudhfyekh4ed.francecentral-01.azurewebsites.net/
+
 
 
 Install dependencies:
