@@ -17,10 +17,10 @@ Admins:
 -Generate reports on listings filtered by country, city, and ratings.
 
 Tech Stack
-Backend Framework: Node.js with Express.js
-Database: MongoDB (Mongoose ODM)
-Authentication: JWT-based authentication
-API Documentation: Swagger UI
+Backend Framework: Node.js with Express.js,
+Database: MongoDB (Mongoose ODM),
+Authentication: JWT-based authentication,
+API Documentation: Swagger UI,
 Deployment : Render
 
 Prerequisites
@@ -83,7 +83,7 @@ Render: https://se4458.onrender.com
 Install dependencies:
 npm install
 
-Create a .env file in the root directory and configure:
+
 MONGO_URI=mongodb+srv://kmc:cmr.2017@se4458.ix5di.mongodb.net/?retryWrites=true&w=majority&appName=SE4458
 
 PORT=5000
@@ -91,8 +91,5 @@ PORT=5000
 Start the server:
 node server.js
 
-API will be available at:
-http://localhost:5000
 
-Swagger UI:
-http://localhost:5000/api-docs
+
