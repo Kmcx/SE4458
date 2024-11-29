@@ -52,14 +52,14 @@ router.post('/', auth, roleAuthorization(['guest']), async (req, res) => {
       return res.status(404).json({ msg: 'Listing not found' });
     }
 
-    // Validate dates
+    
     const fromDate = new Date(from_date);
     const toDate = new Date(to_date);
     if (fromDate >= toDate) {
       return res.status(400).json({ msg: 'Invalid date range' });
     }
 
-    // Check availability
+    
     const overlappingBooking = await Booking.findOne({
       listingId,
       $or: [
@@ -72,7 +72,7 @@ router.post('/', auth, roleAuthorization(['guest']), async (req, res) => {
       return res.status(400).json({ msg: 'Listing is unavailable for the selected dates' });
     }
 
-    // Create the booking
+   
     const booking = new Booking({
       listingId,
       guestId: req.user.id,

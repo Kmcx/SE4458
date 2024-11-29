@@ -67,7 +67,7 @@ router.get('/report-listings', auth, roleAuthorization(['admin']), async (req, r
   const { country, city, min_rating, max_rating } = req.query;
 
   try {
-    // Build query based on parameters
+    
     let query = {};
 
     if (country) query.country = country;
@@ -141,7 +141,7 @@ router.get('/report-listings', auth, roleAuthorization(['admin']), async (req, r
  */
 router.get('/listings', auth, roleAuthorization(['admin']), async (req, res) => {
   try {
-    const listings = await Listing.find({}, '-__v'); // Exclude the __v field
+    const listings = await Listing.find({}, '-__v'); 
     res.json({ listings });
   } catch (err) {
     console.error(err.message);

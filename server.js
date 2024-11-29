@@ -7,9 +7,9 @@ require('dotenv').config();
 const cors = require("cors");
 
 app.use(cors({
-    origin: "https://se4458.onrender.com",          // Sadece belirli domainlere izin ver
-    methods: ["GET", "POST", "PUT", "DELETE"],  // Hangi HTTP metodlarına izin verileceğini belirt
-    allowedHeaders: ["Content-Type", "Authorization"],  // Hangi başlıklar kabul edilecek
+    origin: "https://se4458.onrender.com",          
+    methods: ["GET", "POST", "PUT", "DELETE"],  
+    allowedHeaders: ["Content-Type", "Authorization"],  
   }));
 
 connectDB();

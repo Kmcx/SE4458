@@ -21,13 +21,13 @@ Backend Framework: Node.js with Express.js
 Database: MongoDB (Mongoose ODM)
 Authentication: JWT-based authentication
 API Documentation: Swagger UI
-Deployment : Azure 
+Deployment : Render
 
 Prerequisites
 Node.js (v14 or higher)
 MongoDB (local or cloud instance)
 
-Swagger UI URL: http://localhost:5000/api-docs/
+Swagger UI URL: https://se4458.onrender.com/api-docs/
 
 API Endpoints
 Authentication:
@@ -75,8 +75,8 @@ password: hoca
 
 
 Clone the repository:
-git clone [<repository_url>](https://github.com/Kmcx/SE4458.git)
-Azure: https://midtermapiproject-fvaacudhfyekh4ed.francecentral-01.azurewebsites.net/
+git clone (https://github.com/Kmcx/SE4458.git)
+Render: https://se4458.onrender.com
 
 
 

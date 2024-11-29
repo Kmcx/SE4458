@@ -49,19 +49,19 @@ router.post('/', auth, roleAuthorization(['host']), async (req, res) => {
   const { title, no_of_people, country, city, price, from_date, to_date } = req.body;
 
   try {
-    // Validate required fields
+    
     if (!title || !no_of_people || !country || !city || !price || !from_date || !to_date) {
       return res.status(400).json({ msg: 'All fields, including from_date and to_date, are required' });
     }
 
-    // Validate date range
+    
     const startDate = new Date(from_date);
     const endDate = new Date(to_date);
     if (startDate >= endDate) {
       return res.status(400).json({ msg: 'from_date must be earlier than to_date' });
     }
 
-    // Create the listing
+    
     const listing = new Listing({
       hostId: req.user.id,
       title,
