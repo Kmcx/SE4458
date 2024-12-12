@@ -84,7 +84,7 @@ Install dependencies:
 npm install
 
 
-MONGO_URI=mongodb+srv://kmc:cmr.2017@se4458.ix5di.mongodb.net/?retryWrites=true&w=majority&appName=SE4458
+
 
 PORT=5000
 
